@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Brew & Beans – Coffee Shop</title>
+  <meta name='description' content='Experience craft coffee at Brew & Beans with specialty drinks, pastries, and a cozy community space.'>
+  <script src='https://cdn.tailwindcss.com'></script>
+</head>
+<body class='bg-[#F5DEB3] text-gray-800 font-sans'>
+  <header class='bg-[#3C2415] text-white'>
+    <div class='container mx-auto px-4 py-4 flex items-center justify-between'>
+      <a href='index.html' class='text-2xl font-semibold'>Brew & Beans</a>
+      <nav class='hidden md:flex gap-6'>
+        <a href='index.html' class='hover:underline'>Home</a>
+        <a href='menu.html' class='hover:underline'>Menu</a>
+        <a href='about.html' class='hover:underline'>About</a>
+        <a href='contact.html' class='hover:underline'>Contact</a>
+      </nav>
+      <button id='menuButton' class='md:hidden text-white'>Menu</button>
+    </div>
+    <div id='mobileMenu' class='md:hidden hidden px-4 pb-4'>
+      <a href='index.html' class='block py-2'>Home</a>
+      <a href='menu.html' class='block py-2'>Menu</a>
+      <a href='about.html' class='block py-2'>About</a>
+      <a href='contact.html' class='block py-2'>Contact</a>
+    </div>
+  </header>
+  <main>
+    <section class='relative min-h-screen'>
+      <img src='https://pixabay.com/get/gc401f08aebaeb99e4e128a198b32498e1c65292e7def5fcd51e3b4196c63d5c104956868cd21fffc435afa0855def433eb2012798a36a5d2a2850047dcd932ab_640.jpg' alt='Cozy coffee shop interior with barista serving customers' class='absolute inset-0 w-full h-full object-cover'>
+      <div class='absolute inset-0 bg-black/50'></div>
+      <div class='relative z-10 flex items-center justify-center min-h-screen'>
+        <div class='text-center text-white p-6 max-w-xl'>
+          <h1 class='text-4xl md:text-6xl font-bold mb-4'>Brew & Beans</h1>
+          <p class='text-lg md:text-2xl mb-6'>Small-batch coffee, handcrafted pastries, and a welcoming space to linger.</p>
+          <div class='flex justify-center gap-4'>
+            <a href='menu.html' class='bg-[#D2B48C] hover:bg-[#c4a07a] text-[#3C2415] font-semibold px-6 py-3 rounded shadow transition-all'>View Menu</a>
+            <a href='about.html' class='bg-transparent border border-white text-white px-6 py-3 rounded transition-all'>Our Story</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class='py-16'>
+      <div class='container mx-auto px-4'>
+        <div class='grid md:grid-cols-3 gap-8'>
+          <div class='text-center reveal opacity-0 translate-y-6'>
+            <div class='text-4xl mb-3'>☕</div>
+            <h3 class='text-xl font-semibold mb-2'>Specialty Coffee</h3>
+            <p>Ethically sourced beans roasted in-house for vibrant flavors.</p>
+          </div>
+          <div class='text-center reveal opacity-0 translate-y-6'>
+            <div class='text-4xl mb-3'>🥐</div>
+            <h3 class='text-xl font-semibold mb-2'>Fresh Pastries</h3>
+            <p>Daily pastries baked to pair perfectly with your drink.</p>
+          </div>
+          <div class='text-center reveal opacity-0 translate-y-6'>
+            <div class='text-4xl mb-3'>🛋️</div>
+            <h3 class='text-xl font-semibold mb-2'>Cozy Space</h3>
+            <p>Relaxing atmosphere with free Wi-Fi and comfy corners.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class='bg-[#3C2415] text-white'>
+    <div class='container mx-auto px-4 py-6 grid md:grid-cols-3 gap-6'>
+      <div>
+        <h4 class='font-semibold mb-2'>Brew & Beans</h4>
+        <p>Experience craft coffee in a warm, welcoming space.</p>
+      </div>
+      <div>
+        <h4 class='font-semibold mb-2'>Hours</h4>
+        <p>Mon–Fri: 7:00 AM – 6:00 PM<br>Sat–Sun: 8:00 AM – 6:00 PM</p>
+      </div>
+      <div>
+        <h4 class='font-semibold mb-2'>Find Us</h4>
+        <p>123 Caffeine Lane, Roastia</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    // Mobile menu toggle
+    (function(){ var btn=document.getElementById('menuButton'); var m=document.getElementById('mobileMenu'); if(btn && m){ btn.addEventListener('click',()=>{ m.classList.toggle('hidden'); }); } })();
+
+    // Simple reveal on scroll
+    document.addEventListener('DOMContentLoaded', ()=>{
+      const reveals=document.querySelectorAll('.reveal');
+      const obs=new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.remove('opacity-0','translate-y-6'); e.target.classList.add('opacity-100','translate-y-0'); obs.unobserve(e.target); } }); }, {threshold:0.1});
+      reveals.forEach(r=>obs.observe(r));
+    });
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js' crossorigin='anonymous'></script>
+</body>
+</html>
