@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+  <meta charset='utf-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <title>Brew & Beans – Our Story</title>
+  <meta name='description' content='Discover the story behind Brew & Beans, our sourcing, and community focus.'>
+  <script src='https://cdn.tailwindcss.com'></script>
+</head>
+<body class='bg-[#F5DEB3] text-gray-800 font-sans'>
+  <header class='bg-[#3C2415] text-white'>
+    <div class='container mx-auto px-4 py-4 flex items-center justify-between'>
+      <a href='index.html' class='text-2xl font-semibold'>Brew & Beans</a>
+      <nav class='hidden md:flex gap-6'>
+        <a href='index.html' class='hover:underline'>Home</a>
+        <a href='menu.html' class='hover:underline'>Menu</a>
+        <a href='about.html' class='hover:underline'>About</a>
+        <a href='contact.html' class='hover:underline'>Contact</a>
+      </nav>
+      <button id='menuButton' class='md:hidden text-white'>Menu</button>
+    </div>
+    <div id='mobileMenu' class='md:hidden hidden px-4 pb-4'>
+      <a href='index.html' class='block py-2'>Home</a>
+      <a href='menu.html' class='block py-2'>Menu</a>
+      <a href='about.html' class='block py-2'>About</a>
+      <a href='contact.html' class='block py-2'>Contact</a>
+    </div>
+  </header>
+  <main>
+    <section class='relative min-h-screen'>
+      <img src='https://pixabay.com/get/g316a3061db4410824d7806d0ecc123236fbdd94778857e6bf387af6e13ff255588729f00c1a63474b74022823ba8a6ef_640.jpg' alt='Professional coffee shop team in a warm setting' class='absolute inset-0 w-full h-full object-cover'>
+      <div class='absolute inset-0 bg-black/30'></div>
+      <div class='relative z-10 flex items-center justify-center min-h-screen'>
+        <div class='text-center text-white p-6 max-w-2xl'>
+          <h1 class='text-4xl md:text-5xl font-bold mb-4'>Our Story</h1>
+          <p class='mb-6'>Brew & Beans began as a tiny neighborhood roastery,grown with a passion for ethically sourced beans, thoughtful brewing, and community connections.</p>
+        </div>
+      </div>
+    </section>
+    <section class='py-12'>
+      <div class='container mx-auto px-4'>
+        <h2 class='text-2xl font-semibold mb-4'>Values & Sourcing</h2>
+        <ul class='list-disc pl-6 space-y-2'>
+          <li>Direct trade with farmers to ensure fair wages</li>
+          <li>Roasted in small batches for peak flavor</li>
+          <li>Environmentally conscious packaging and waste reduction</li>
+        </ul>
+      </div>
+    </section>
+    <section class='py-12'>
+      <div class='container mx-auto px-4'>
+        <h2 class='text-2xl font-semibold mb-4'>Meet the Team</h2>
+        <div class='grid md:grid-cols-3 gap-6'>
+          <div class='bg-white/70 rounded shadow p-4 reveal opacity-0 translate-y-6'>
+            <img src='https://images.pexels.com/photos/8117465/pexels-photo-8117465.jpeg?auto=compress&cs=tinysrgb&h=650&w=940' alt='Team member 1' class='w-16 h-16 rounded-full mx-auto mb-2'>
+            <h4 class='text-center font-semibold'>Alex Rivera</h4>
+            <p class='text-sm text-center text-gray-700'>Head Roaster</p>
+          </div>
+          <div class='bg-white/70 rounded shadow p-4 reveal opacity-0 translate-y-6'>
+            <img src='https://images.unsplash.com/photo-1698502744308-b187f6612ead?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3ODkyNDZ8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwbWVtYmVyJTIwMiUyMGF2YXRhcnxlbnwwfDB8fHwxNzU5NDkwMjUzfDA&ixlib=rb-4.1.0&q=80&w=1080' alt='Team member 2' class='w-16 h-16 rounded-full mx-auto mb-2'>
+            <h4 class='text-center font-semibold'>Mina Park</h4>
+            <p class='text-sm text-center text-gray-700'>Barista Lead</p>
+          </div>
+          <div class='bg-white/70 rounded shadow p-4 reveal opacity-0 translate-y-6'>
+            <img src='https://pixabay.com/get/g48d411a9b9e2723f40750acfd2349706a2b1a58b133a7765c68341f4e698a75657b4812d20bbbad21bfb5887aa42593fd12f99def87bbb10a3b23cfc7c140da0_640.jpg' alt='Team member 3' class='w-16 h-16 rounded-full mx-auto mb-2'>
+            <h4 class='text-center font-semibold'>Jonah Lee</h4>
+            <p class='text-sm text-center text-gray-700'>Operations</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class='bg-[#3C2415] text-white'>
+    <div class='container mx-auto px-4 py-6 grid md:grid-cols-3 gap-6'>
+      <div>
+        <h4 class='font-semibold mb-2'>Brew & Beans</h4>
+        <p>Craft coffee with heart and community focus.</p>
+      </div>
+      <div>
+        <h4 class='font-semibold mb-2'>Our Promise</h4>
+        <p>Quality, transparency, and care in every cup.</p>
+      </div>
+      <div>
+        <h4 class='font-semibold mb-2'>Visit</h4>
+        <p>123 Caffeine Lane, Roastia</p>
+      </div>
+    </div>
+  </footer>
+  <script>
+    (function(){ var btn=document.getElementById('menuButton'); var m=document.getElementById('mobileMenu'); if(btn && m){ btn.addEventListener('click',()=>{ m.classList.toggle('hidden'); }); } })();
+    document.addEventListener('DOMContentLoaded', ()=>{ const reveals=document.querySelectorAll('.reveal'); const obs=new IntersectionObserver((entries)=>{ entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.remove('opacity-0','translate-y-6'); e.target.classList.add('opacity-100','translate-y-0'); obs.unobserve(e.target); } }); }, {threshold:0.1}); reveals.forEach(r=>obs.observe(r)); });
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js' crossorigin='anonymous'></script>
+</body>
+</html>
